@@ -40,7 +40,7 @@ open class FException @JvmOverloads constructor(
     }
 }
 
-suspend inline fun <T> fCatching(block: suspend () -> T): Result<T> {
+suspend inline fun <T> fCatchingAwait(block: suspend () -> T): Result<T> {
     return try {
         Result.success(block())
     } catch (e: Throwable) {
