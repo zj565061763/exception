@@ -13,8 +13,8 @@ class FExceptionHttpResponseCode @JvmOverloads constructor(
 
     override val formatMessage: String
         get() {
-            super.formatMessage?.let { return it }
-            val localMsg = fContext.getString(R.string.lib_exception_http_message_response_code)
-            return "${localMsg}(${code})"
+            val msg = super.formatMessage
+                ?: fContext.getString(R.string.lib_exception_http_message_response_code)
+            return "${msg}(${code})"
         }
 }

@@ -13,7 +13,7 @@ class FExceptionHttpParseResponse @JvmOverloads constructor(
 
     override val formatMessage: String
         get() {
-            super.formatMessage?.let { return it }
-            return fContext.getString(R.string.lib_exception_http_message_parse_response)
+            return super.formatMessage
+                ?: fContext.getString(R.string.lib_exception_http_message_parse_response)
         }
 }
