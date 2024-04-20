@@ -28,7 +28,7 @@ open class FExceptionHttp @JvmOverloads constructor(
                 val context = fContext
                 val resId = context.resources.getIdentifier(resName, "string", context.packageName)
                 context.getString(resId)
-            } catch (e: Exception) {
+            } catch (e: Throwable) {
                 e.printStackTrace()
                 null
             }
