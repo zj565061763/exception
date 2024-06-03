@@ -31,16 +31,9 @@ open class FException @JvmOverloads constructor(
     override fun toString(): String {
         return desc
     }
-
-    companion object {
-        @JvmStatic
-        fun wrap(throwable: Throwable): FException {
-            return if (throwable is FException) throwable else FException(cause = throwable)
-        }
-    }
 }
 
-suspend inline fun <T> fCatchingAwait(block: suspend () -> T): Result<T> {
+suspend inline fun <T> fRunCatching(block: suspend () -> T): Result<T> {
     return try {
         Result.success(block())
     } catch (e: Throwable) {

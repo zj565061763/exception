@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="lib_exception_message_loading">加载中</string>
-
     <string name="lib_exception_http_message_parse_response">数据解析异常</string>
     <string name="lib_exception_http_message_response_code">服务器异常</string>
 
